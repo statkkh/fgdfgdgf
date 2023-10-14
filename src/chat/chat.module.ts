@@ -5,7 +5,6 @@ import { Chat } from './chat/chat';
 
 @Module({
   controllers: [ChatController],
-  // eslint-disable-next-line prettier/prettier
   providers: [ChatService, Chat]
 })
 export class ChatModule {}

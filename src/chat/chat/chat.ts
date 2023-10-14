@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Logger } from '@nestjs/common';
 import { SubscribeMessage, WebSocketGateway, WebSocketServer,MessageBody, ConnectedSocket } from '@nestjs/websockets';
 import { Server ,Socket } from 'socket.io';
@@ -21,7 +20,8 @@ export class Chat {
         @MessageBody() room : string,
         @ConnectedSocket() socket : Socket
     ): void{
-        socket.join(`Join!' : ${room}`);        
+        socket.join(`Join!' : ${room}`);   
+        socket.join(room);     
     }
 
     @SubscribeMessage('send')
